@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f923ad4d117624911a2ed93a6126d94",
+    "content-hash": "a938bd43e931d48fd9aa66989f40670c",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -2398,16 +2398,16 @@
         },
         {
             "name": "zendframework/zend-view",
-            "version": "2.10.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-view.git",
-                "reference": "4478cc5dd960e2339d88b363ef99fa278700e80e"
+                "reference": "651621d82df0c70664e476481d53fe3b98989a78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-view/zipball/4478cc5dd960e2339d88b363ef99fa278700e80e",
-                "reference": "4478cc5dd960e2339d88b363ef99fa278700e80e",
+                "url": "https://api.github.com/repos/zendframework/zend-view/zipball/651621d82df0c70664e476481d53fe3b98989a78",
+                "reference": "651621d82df0c70664e476481d53fe3b98989a78",
                 "shasum": ""
             },
             "require": {
@@ -2471,7 +2471,32 @@
                     "Zend\\View\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "files": [
+                    "test/autoload.php"
+                ],
+                "psr-4": {
+                    "ZendTest\\View\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
             "license": [
                 "BSD-3-Clause"
             ],
@@ -2481,7 +2506,11 @@
                 "view",
                 "zf2"
             ],
-            "time": "2018-01-17T22:21:50+00:00"
+            "support": {
+                "source": "https://github.com/zendframework/zend-view/tree/master",
+                "issues": "https://github.com/zendframework/zend-view/issues"
+            },
+            "time": "2018-01-17T22:22:48+00:00"
         },
         {
             "name": "zfcampus/zf-development-mode",
@@ -4236,7 +4265,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "zendframework/zend-component-installer": 20
+        "zendframework/zend-component-installer": 20,
+        "zendframework/zend-view": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
